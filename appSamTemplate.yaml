@@ -55,12 +55,7 @@ Resources:
       Role: >-
         arn:aws:iam::041132386971:role/service-role/itemize_sentence-role-fve1od7y
       Events:
-        Api1:
-          Type: Api
-          Properties:
-            Path: /MyResource
-            Method: ANY
-        Api2:
+        lexpost:
           Type: Api
           Properties:
             Path: /lex
@@ -78,21 +73,12 @@ Resources:
       Role: >-
         arn:aws:iam::041132386971:role/service-role/search_es_photo-role-knqx4qc0
       Events:
-        Api1:
+        searchesphoto:
           Type: Api
           Properties:
             Path: /search
             Method: POST
-        Api2:
-          Type: Api
-          Properties:
-            Path: /MyResource
-            Method: ANY
-        Api3:
-          Type: Api
-          Properties:
-            Path: /search
-            Method: GET
+
       VpcConfig:
         SecurityGroupIds:
           - sg-0806d05a
@@ -111,7 +97,7 @@ Resources:
       Timeout: 3
       Role: 'arn:aws:iam::041132386971:role/service-role/upload_photo-role-2brby1w5'
       Events:
-        Api1:
+        uploadphoto:
           Type: Api
           Properties:
             Path: /upload
