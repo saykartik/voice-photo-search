@@ -1,6 +1,17 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: 'AWS::Serverless-2016-10-31'
 Description: An AWS Serverless Specification template describing your function.
+Metadata:
+  AWS::ServerlessRepo::Application:
+    Name: voice-photo-search
+    Description: Application that can search a photo album by voice queries. Built on AWS
+    Author: Param Popat, Kartik Balasubramaniam
+    SpdxLicenseId: Apache-2.0
+    ReadmeUrl: README.md
+    HomePageUrl: https://github.com/saykartik/voice-photo-search
+    SemanticVersion: 1.0.1
+    SourceCodeUrl: https://github.com/saykartik/voice-photo-search
+
 Resources:
   searchphoto:
     Type: 'AWS::Serverless::Function'
