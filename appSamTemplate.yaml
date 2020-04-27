@@ -1,15 +1,6 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: 'AWS::Serverless-2016-10-31'
 Description: An AWS Serverless Specification template describing your function.
-Metadata:
-  AWS::ServerlessRepo::Application:
-    Name: voice-photo-search
-    Description: Application that can search a photo album by voice queries. Built on AWS
-    Author: saykartik
-    SpdxLicenseId: Apache-2.0
-    HomePageUrl: https://github.com/saykartik/voice-photo-search
-    SemanticVersion: 1.0.1
-    SourceCodeUrl: https://github.com/saykartik/voice-photo-search
 
 Resources:
   searchphoto:
@@ -17,7 +8,7 @@ Resources:
     Properties:
       Handler: lambda_function.lambda_handler
       Runtime: python3.7
-      CodeUri: .
+      CodeUri: ./
       Description: ''
       MemorySize: 512
       Timeout: 20
@@ -30,7 +21,7 @@ Resources:
     Properties:
       Handler: lambda_function.lambda_handler
       Runtime: python3.6
-      CodeUri: .
+      CodeUri: ./
       Description: ''
       MemorySize: 256
       Timeout: 5
@@ -57,7 +48,7 @@ Resources:
     Properties:
       Handler: lambda_function.lambda_handler
       Runtime: python3.7
-      CodeUri: .
+      CodeUri: ./
       Description: ''
       MemorySize: 128
       Timeout: 20
@@ -90,7 +81,7 @@ Resources:
     Properties:
       Handler: lambda_function.lambda_handler
       Runtime: python3.7
-      CodeUri: .
+      CodeUri: ./
       Description: ''
       MemorySize: 128
       Timeout: 3
@@ -124,7 +115,7 @@ Resources:
     Properties:
       Handler: lambda_function.lambda_handler
       Runtime: python3.7
-      CodeUri: .
+      CodeUri: ./
       Description: ''
       MemorySize: 128
       Timeout: 3
