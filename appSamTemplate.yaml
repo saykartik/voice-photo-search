@@ -3,10 +3,10 @@ Transform: 'AWS::Serverless-2016-10-31'
 Description: An AWS Serverless Specification template describing your function.
 
 Resources:
-  searchphoto:
+  lexdisambiguate:
     Type: 'AWS::Serverless::Function'
     Properties:
-      Handler: lambda_function.lambda_handler
+      Handler: lex_disambiguate.lambda_handler
       Runtime: python3.7
       CodeUri: ./
       Description: ''
@@ -20,7 +20,7 @@ Resources:
   uploadphoto:
     Type: 'AWS::Serverless::Function'
     Properties:
-      Handler: lambda_function.lambda_handler
+      Handler: upload_photo.lambda_handler
       Runtime: python3.7
       CodeUri: ./
       Description: ''
@@ -33,3 +33,21 @@ Resources:
           Properties:
             Path: /upload
             Method: PUT
+
+  itemizesentence:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      Handler: itemize_sentence.lambda_handler
+      Runtime: python3.7
+      CodeUri: ./
+      Description: ''
+      MemorySize: 128
+      Timeout: 20
+      Role: >-
+        arn:aws:iam::041132386971:role/service-role/itemize_sentence-role-fve1od7y
+      Events:
+        lexpost:
+          Type: Api
+          Properties:
+            Path: /lex
+            Method: POST
