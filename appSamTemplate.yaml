@@ -5,7 +5,7 @@ Metadata:
   AWS::ServerlessRepo::Application:
     Name: voice-photo-search
     Description: Application that can search a photo album by voice queries. Built on AWS
-    Author: Param Popat, Kartik Balasubramaniam
+    Author: saykartik
     SpdxLicenseId: Apache-2.0
     HomePageUrl: https://github.com/saykartik/voice-photo-search
     SemanticVersion: 1.0.1
