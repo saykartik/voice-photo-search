@@ -1,3 +1,6 @@
+"""
+Committed through code pipeline
+"""
 import boto3
 import json
 import os

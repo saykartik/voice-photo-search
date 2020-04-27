@@ -1,9 +1,5 @@
 """
-Created from the 'BookTrip' Template.
-This function is used as a fulfillment code hook for the Restaurant Suggestion
-Lex Bot.
-For instructions on how to set up and test this bot, as well as additional samples,
-visit the Lex Getting Started documentation http://docs.aws.amazon.com/lex/latest/dg/getting-started.html.
+Committed through code pipeline
 """
 
 import json

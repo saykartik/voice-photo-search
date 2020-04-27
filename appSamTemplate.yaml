@@ -65,17 +65,7 @@ Resources:
           Properties:
             Path: /lex
             Method: POST
-        Api3:
-          Type: Api
-          Properties:
-            Path: /lex
-            Method: POST
-        Api4:
-          Type: Api
-          Properties:
-            Path: /MyResource
-            Method: ANY
-            
+
   searchesphoto:
     Type: 'AWS::Serverless::Function'
     Properties:
@@ -122,11 +112,6 @@ Resources:
       Role: 'arn:aws:iam::041132386971:role/service-role/upload_photo-role-2brby1w5'
       Events:
         Api1:
-          Type: Api
-          Properties:
-            Path: /upload
-            Method: PUT
-        Api2:
           Type: Api
           Properties:
             Path: /upload

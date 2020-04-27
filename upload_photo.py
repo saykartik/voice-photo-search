@@ -1,3 +1,6 @@
+"""
+Committed through code pipeline
+"""
 import json
 import boto3
 import base64
