@@ -54,7 +54,7 @@ Resources:
 
   ppkbphotosauto:
     Type: AWS::S3::Bucket
-    DeletionPolicy: Retain
+    DeletionPolicy: Delete
     Properties:
       BucketName: ppkbphotos-auto
 
