@@ -128,6 +128,6 @@ Resources:
         Statement:
           - Effect: "Allow"
             Principal:
-              AWS: "arn:aws:iam::123456789012:user/es-user"
+              AWS: "*"
             Action: "es:*"
-            Resource: "arn:aws:es:us-east-1:846973539254:domain/photo-index-auto/*"
+            Resource: "arn:aws:es:us-east-1:04113238697:domain/photo-index-auto/*"
