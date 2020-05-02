@@ -115,7 +115,7 @@ Resources:
       ElasticsearchClusterConfig:
         InstanceCount: "1"
         InstanceType: "t2.small.elasticsearch"
-
+       ElasticsearchVersion: "7.4"
       EBSOptions:
         EBSEnabled: true
         Iops: 0
