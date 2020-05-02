@@ -22,7 +22,7 @@ def generateIndexRecord(bucket, file, time, labels):
     print('Written to JSON: ', record)
     
     # Index Record
-    es_url = 'https://vpc-photo-index-6gtjhllhc3y47utn5shxhmfhu4.us-east-1.es.amazonaws.com/photos/_doc/'
+    es_url = 'https://search-photo-index-auto-iiwufwhfvifoyriogwcioz2ewu.us-east-1.es.amazonaws.com/photos/_doc/'
     cmd = 'curl -XPOST %s -d \'%s\' -H "Content-Type: application/json"' % (es_url, json.dumps(record))
     
     resp = os.system(cmd)

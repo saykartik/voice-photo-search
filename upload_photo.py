@@ -38,7 +38,7 @@ def generate_name(len=7):
 def lambda_handler(event, context):
     with open("/tmp/image.jpg", "wb") as new_file:
         new_file.write(base64.b64decode(event['body'].split(',')[1]))
-    print(upload_file("/tmp/image.jpg", 'ppkbphotos', generate_name()))
+    print(upload_file("/tmp/image.jpg", 'ppkbphotos-auto', generate_name()))
     return {
         'statusCode': 200,
         'body': json.dumps('Success')
