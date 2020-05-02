@@ -52,7 +52,7 @@ def lambda_handler(event, context):
     
     things = event['body']
     es_url = 'https://vpc-photo-index-6gtjhllhc3y47utn5shxhmfhu4.us-east-1.es.amazonaws.com/photos/_search'
-    s3_url = 'https://ppkbphotos.s3.amazonaws.com/'
+    s3_url = 'https://ppkbphotos-auto.s3.amazonaws.com/'
     
     photo_list = []
     url_list = []
