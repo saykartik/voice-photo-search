@@ -51,6 +51,11 @@ Resources:
           Properties:
             Path: /lex
             Method: POST
+  S3Bucket:
+    Type: AWS::S3::Bucket
+    DeletionPolicy: Retain
+    Properties:
+      BucketName: ppkbphotos-auto
 
   indexphotos:
     Type: 'AWS::Serverless::Function'
@@ -67,7 +72,7 @@ Resources:
           Type: S3
           Properties:
             Bucket:
-              Ref: Bucket1
+              Ref: ppkbphotos-auto
             Events:
               - 's3:ObjectCreated:Put'
       VpcConfig:
