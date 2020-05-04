@@ -128,7 +128,6 @@ Resources:
 
   PhotoIndexAuto:
     Type: AWS::Elasticsearch::Domain
-    DeletionPolicy: Remain
     Properties:
       DomainName: "photo-index-auto"
       ElasticsearchClusterConfig:
