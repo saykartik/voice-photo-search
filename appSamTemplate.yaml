@@ -16,8 +16,6 @@ Resources:
             Action:
               - 'sts:AssumeRole'
       Path: /
-      Policies:
-        - AmazonLexFullAccess
 
   lexdisambiguate:
     Type: 'AWS::Serverless::Function'
