@@ -28,7 +28,9 @@ Resources:
       Description: ''
       MemorySize: 128
       Timeout: 3
-      Role: 'arn:aws:iam::041132386971:role/service-role/upload_photo-role-2brby1w5'
+      Policies:
+        - 'AmazonS3FullAccess'
+        - 'AWSLambdaBasicExecutionRole'
       Events:
         uploadphoto:
           Type: Api
@@ -45,8 +47,9 @@ Resources:
       Description: ''
       MemorySize: 128
       Timeout: 20
-      Role: >-
-        arn:aws:iam::041132386971:role/service-role/itemize_sentence-role-fve1od7y
+      Policies:
+        - 'AmazonLexFullAccess'
+        - 'AWSLambdaBasicExecutionRole'
       Events:
         lexpost:
           Type: Api
@@ -69,7 +72,13 @@ Resources:
       Description: ''
       MemorySize: 256
       Timeout: 5
-      Role: 'arn:aws:iam::041132386971:role/index-with-vpc'
+      Policies:
+        - 'AmazonS3FullAccess'
+        - 'AmazonRekognitionFullAccess'
+        - 'AdministratorAccess'
+        - 'AWSLambdaExecute'
+        - 'AWSLambdaVPCAccessExecutionRole'
+        - 'AWSLambdaBasicExecutionRole'
       Events:
         BucketEvent1:
           Type: S3
@@ -94,8 +103,8 @@ Resources:
       Description: ''
       MemorySize: 128
       Timeout: 3
-      Role: >-
-        arn:aws:iam::041132386971:role/service-role/search_es_photo-role-knqx4qc0
+      Policies:
+        - 'AWSLambdaBasicExecutionRole'
       Events:
         search:
           Type: Api
