@@ -16,8 +16,9 @@ Resources:
             Action:
               - 'sts:AssumeRole'
       Path: /
-      Policies:
-        - AmazonLexFullAccess
+      ManagedPolicyArns:
+        - 'arn:aws:iam::aws:policy/AmazonLexFullAccess'
+        - 'arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole'
 
   lexdisambiguate:
     Type: 'AWS::Serverless::Function'
