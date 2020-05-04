@@ -6,7 +6,6 @@ Resources:
   DisambiguateRole:
     Type: 'AWS::IAM::Role'
     Properties:
-      RoleName: 'disambiguaterolexyz'
       AssumeRolePolicyDocument:
         Version: 2012-10-17
         Statement:
@@ -17,6 +16,8 @@ Resources:
             Action:
               - 'sts:AssumeRole'
       Path: /
+      Policies:
+        - AmazonLexFullAccess
 
   lexdisambiguate:
     Type: 'AWS::Serverless::Function'
