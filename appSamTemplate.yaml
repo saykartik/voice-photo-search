@@ -5,6 +5,7 @@ Description: An AWS Serverless Specification template describing your function.
 Resources:
   DisambiguateRole:
     Type: 'AWS::IAM::Role'
+    RoleName: 'disambiguaterolexyz'
     Properties:
       AssumeRolePolicyDocument:
         Version: 2012-10-17
