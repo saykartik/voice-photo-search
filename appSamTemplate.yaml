@@ -3,6 +3,23 @@ Transform: 'AWS::Serverless-2016-10-31'
 Description: An AWS Serverless Specification template describing your function.
 
 Resources:
+  DisambiguateRole:
+    Type: 'AWS::IAM::Role'
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service:
+                - lambda.amazonaws.com
+            Action:
+              - 'sts:AssumeRole'
+      Path: /
+      Policies:
+        - AmazonLexFullAccess
+        - AWSLambdaBasicExecutionRole
+
   lexdisambiguate:
     Type: 'AWS::Serverless::Function'
     Properties:
@@ -12,7 +29,8 @@ Resources:
       Description: ''
       MemorySize: 512
       Timeout: 20
-      Role: 'arn:aws:iam::041132386971:role/service-role/search_photo-role-laeady0s'
+      Role:
+        Ref: DisambiguateRole
       Layers:
         - 'arn:aws:lambda:us-east-1:113088814899:layer:Klayers-python37-spacy:26'
         - 'arn:aws:lambda:us-east-1:041132386971:layer:en_core_web_smv2:1'
@@ -110,6 +128,7 @@ Resources:
 
   PhotoIndexAuto:
     Type: AWS::Elasticsearch::Domain
+    DeletionPolicy: Remain
     Properties:
       DomainName: "photo-index-auto"
       ElasticsearchClusterConfig:
