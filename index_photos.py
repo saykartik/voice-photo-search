@@ -1,5 +1,5 @@
 """
-Committed through code pipeline
+Check that the pipeline is working...
 """
 import boto3
 import json
